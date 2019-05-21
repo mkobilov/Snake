@@ -54,6 +54,7 @@ void byeINT (int go)
 }
 void exitbye()
 {
+	tcsetattr(0, TCSAFLUSH, &(View::get()->oldtc));
 	printf("\e[H\e[J");
 	printf("BB LEATHER BAG\n");
 }

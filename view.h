@@ -41,14 +41,15 @@ public:
 	int winx, winy;
 	std::pair <int,fn_type> timer;
 	Game* game;
+	struct termios oldtc;
 private:
 	void gotoxy(int,int);
-	void hline(int,int,int,char c='*');
-	void vline(int,int,int,char c='*');
+	void hline(int,int,int,char c='#');
+	void vline(int,int,int,char c='#');
 	void size(int);
 
 	static View* instance;
-	struct termios oldtc;
+	
 	Keypressable* keyd;
     list<Robot*> AId;
 };
